@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="Ie=edge">
+        <title>Main</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, intial-scale = 1">
+        <style>
+            .nav-header{
+                background-color: blue;
+                height: 70px;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            .nav-header .logo{
+                width: 50px;
+                height: 50px;
+            }
+
+            .nav-header .header-text{
+                font-size: 24px;
+                color: white;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .return-btn {
+                align-self: center;
+                background-color: #fff;
+                background-image: none;
+                background-position: 0 90%;
+                background-repeat: repeat no-repeat;
+                background-size: 4px 3px;
+                border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+                border-style: solid;
+                border-width: 2px;
+                box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+                box-sizing: border-box;
+                color: #41403e;
+                cursor: pointer;
+                display: inline-block;
+                font-family: Neucha, sans-serif;
+                font-size: 1rem;
+                line-height: 23px;
+                outline: none;
+                padding: .75rem;
+                text-decoration: none;
+                transition: all 235ms ease-in-out;
+                border-bottom-left-radius: 15px 255px;
+                border-bottom-right-radius: 225px 15px;
+                border-top-left-radius: 255px 15px;
+                border-top-right-radius: 15px 225px;
+                user-select: none;
+                -webkit-user-select: none;
+                touch-action: manipulation;
+                }
+
+            .return-btn:hover {
+                box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+                transform: translate3d(0, 2px, 0);
+            }
+
+            .return-btn:focus {
+                box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+            }
+
+            footer{
+                background-color: blue;
+                height: 70px;
+                color: white;
+                font-size: 10px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            b{  
+                padding-left: 30px;
+            }
+
+            .form-container{
+                height: 500px;
+                background-color: aquamarine;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            form{
+                width: 80%;
+                height: 80%;
+                background-color: aliceblue;
+                border: 1px solid black;
+                border-radius: 5px;
+            }
+
+            .form-header{
+                display: flex;
+                justify-content: center;
+                font-size: 24px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                font-weight: bolder;
+                border-bottom: 1px solid black;
+                width: 100%;
+                background-color: bisque;
+            }
+
+            .form-input-field{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                padding-left: 100px;
+                padding-right: 100px;
+                padding-top: 60px;
+            }
+
+            input{
+                margin: 5px;
+            }
+
+            .btn-field{
+                display: flex;
+                justify-content: center;
+                padding: 10px;
+            }
+
+            .btn-submit{
+                padding: 10px;
+            }
+
+            @media screen and (max-width: 800px){
+                .main-container, .form-container, .nav-header{
+                    width: 100%;
+                    height: 100%;
+                }
+                
+            }
+
+            @media screen and (max-width: 600px){
+                .main-container, .form-container, .nav-header{
+                    width: 75%;
+                    height: 75%;
+                }   
+            }
+
+            @media screen and (max-width: 600px){
+                .main-container, .form-container, .nav-header{
+                    width: 50%;
+                    height: 50%;
+                }   
+            }
+        </style>
+    </head>
+
+    <body>
+        <header> 
+            <nav class="nav-header">
+                <img class="logo" src="Logo/logo.jpg" alt="logo">
+                <div class="header-text"> Princess of Arena Cam Ranh Hotel</div>
+                <button class="return-btn" id="btn" onclick="window.location= 'main.html';">Return</button>
+            </nav>
+        </header>
+
+        <main class="form-container">
+            <form>
+                <div class="form-header">
+                    Your Reservation
+                </div>
+
+                <div class="form-input-field">
+                    <div class="field1">
+                        <div>Check-in date</div>
+                        <input type="number" id="inDate" min="1" max="31" size="2"><br>
+                        <div>Check-out date</div>
+                        <input type="number" id="outDate" onfocusout="calPrice()" min="1" max="31" size="2"><br>
+                        <div>Month</div>
+                        <input type="text" id="month" min="1" max="12" size="4"><br>
+                        <div>Total Price</div>
+                        <input type="text" id="totalPrice" readonly><br>
+                    </div>
+                    
+                    <div class="field2">
+                        <div>Name</div>
+                        <input type="text" id="name" size="30"><br>
+                        <div>Guest</div>
+                        <input type="number" id="guestNo"><br>
+                        <div>Email</div>
+                        <input type="email" id="email" size="30"><br>
+                        <div>Phone numeber</div>
+                        <input type="tel" id="phoneNo" size="30"><br>
+                    </div>
+                </div>
+
+                <div class="btn-field">
+                    <input type="submit" value="Reserve" class="btn-submit" onclick="setValue(), message()">
+                </div>
+            </form>
+        </main>
+
+        <footer>
+            <b>Made by Le Hoang Cat</b>
+        </footer>
+
+        <script>
+            function calPrice(){
+                var message = "Incorrect date input";
+                var n1 = document.getElementById('inDate').value;
+                var n2 = document.getElementById('outDate').value;
+                if(n2 - n1 < 0){
+                    alert(message);
+                    document.getElementById('totalPrice').value = "Please try again."
+                }else{
+                    document.getElementById('totalPrice').value = (n2 - n1) * 100;
+                }              
+            }
+
+            function setValue(){
+                var a = document.getElementById("inDate").value;
+                var b = document.getElementById("outDate").value;
+                var c = document.getElementById("month").value;
+                var d = document.getElementById("totalPrice").value;
+                var e = document.getElementById("name").value;
+                var f = document.getElementById("guestNo").value;
+                var g = document.getElementById("email").value;
+                var h = document.getElementById("phoneNo").value;
+
+                if(a != " "  || b != " " || c != " " || e != " " || d != " " || f != " " || g != " " || h != " "){
+                    localStorage.setItem('date1', a);
+                    localStorage.setItem('date2', b);
+                    localStorage.setItem('mon', c);
+                    localStorage.setItem('amount', d);
+                    localStorage.setItem('gname', e);
+                    localStorage.setItem('gnumber', f);
+                    localStorage.setItem('gemail', g);
+                    localStorage.setItem('gphone', h);
+                }else {
+                    alert("Please finish filling everthing.");
+                }
+            }
+
+            function message(){
+                alert("You have successfully booked a room. We hope to see you soon!")
+            }
+        </script>
+    </body>
+</html>   

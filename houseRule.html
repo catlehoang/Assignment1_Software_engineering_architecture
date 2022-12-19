@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="Ie=edge">
+        <title>Main</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, intial-scale = 1">
+        <style>
+            .nav-header{
+            background-color: blue;
+            height: 70px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .nav-header .logo{
+            width: 50px;
+            height: 50px;
+        }
+
+        .nav-header .header-text{
+            font-size: 24px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .rule-container{
+            background-color: aqua;
+            height: 550px;
+        }
+
+        .title-text{
+            padding-top: 20px;
+            padding-left: 20px;
+        }
+
+        .check-in-rule,
+        .check-out-rule,
+        .payment-cancel-rule,
+        .children-beds-rule,
+        .age-rule,
+        .payment-method,
+        .smoking-rule,
+        .party-rule,
+        .pet-rule{
+            display: flex;
+            flex-direction: row;
+            padding-bottom: 20px;
+        }
+
+        .rule-title{
+            width: 200px;
+            padding-right: 50px;
+            color: red;
+            font-style: oblique;
+            font-weight: bold;
+        }
+
+        .rule{
+            text-decoration: underline;
+        }
+
+        .return-btn {
+            align-self: center;
+            background-color: #fff;
+            background-image: none;
+            background-position: 0 90%;
+            background-repeat: repeat no-repeat;
+            background-size: 4px 3px;
+            border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+            border-style: solid;
+            border-width: 2px;
+            box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+            box-sizing: border-box;
+            color: #41403e;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Neucha, sans-serif;
+            font-size: 1rem;
+            line-height: 23px;
+            outline: none;
+            padding: .75rem;
+            text-decoration: none;
+            transition: all 235ms ease-in-out;
+            border-bottom-left-radius: 15px 255px;
+            border-bottom-right-radius: 225px 15px;
+            border-top-left-radius: 255px 15px;
+            border-top-right-radius: 15px 225px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            }
+
+            .return-btn:hover {
+            box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+            transform: translate3d(0, 2px, 0);
+            }
+
+            .return-btn:focus {
+            box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+            }
+            svg{
+                width: 20px;
+                height: 20px;
+                padding-left: 20px;
+                padding-right: 5px;
+            }
+
+            footer{
+                background-color: blue;
+                height: 70px;
+                color: white;
+                font-size: 10px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+
+            b{  
+                padding-left: 30px;
+                font-size: 24px;
+                color: black;
+                font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+            }
+
+            p{
+                font-size: 16px;
+                color: black;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+
+            h4{
+                font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+            }
+
+            .rule{
+                font-family: 'Times New Roman', Times, serif;
+            }
+            @media screen and (max-width: 800px){
+                .main-container, .rule-container, .nav-header{
+                    width: 100%;
+                    height: 100%;
+                }
+                
+            }
+
+            @media screen and (max-width: 600px){
+                .main-container, .rule-container, .nav-header{
+                    width: 75%;
+                    height: 75%;
+                }   
+            }
+
+            @media screen and (max-width: 600px){
+                .main-container, .rule-container, .nav-header{
+                    width: 50%;
+                    height: 50%;
+                }   
+            }
+            .title-icon{
+                width: 20px;
+                padding-right: 10px;
+            }
+
+            .child-bed-container{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main-container">
+            <header> 
+                <nav class="nav-header">
+                    <img class="logo" src="Logo/logo.jpg" alt="logo">
+                    <div class="header-text"> Princess of Arena Cam Ranh Hotel</div>
+                    <button class="return-btn" id="btn">Return</button>
+                </nav>
+            </header>
+    
+            <main class="rule-container">
+                <div class="title-text">
+                    <svg class="title-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M384 32H512c17.7 0 32 14.3 32 32s-14.3 32-32 32H398.4c-5.2 25.8-22.9 47.1-46.4 57.3V448H512c17.7 0 32 14.3 32 32s-14.3 32-32 32H320 128c-17.7 0-32-14.3-32-32s14.3-32 32-32H288V153.3c-23.5-10.3-41.2-31.6-46.4-57.3H128c-17.7 0-32-14.3-32-32s14.3-32 32-32H256c14.6-19.4 37.8-32 64-32s49.4 12.6 64 32zM125.8 177.3L51.1 320H204.9L130.2 177.3c-.4-.8-1.3-1.3-2.2-1.3s-1.7 .5-2.2 1.3zM128 128c18.8 0 36 10.4 44.7 27l77.8 148.5c3.1 5.8 6.1 14 5.5 23.8c-.7 12.1-4.8 35.2-24.8 55.1C210.9 402.6 178.2 416 128 416s-82.9-13.4-103.2-33.5c-20-20-24.2-43-24.8-55.1c-.6-9.8 2.5-18 5.5-23.8L83.3 155c8.7-16.6 25.9-27 44.7-27zm384 48c-.9 0-1.7 .5-2.2 1.3L435.1 320H588.9L514.2 177.3c-.4-.8-1.3-1.3-2.2-1.3zm-44.7-21c8.7-16.6 25.9-27 44.7-27s36 10.4 44.7 27l77.8 148.5c3.1 5.8 6.1 14 5.5 23.8c-.7 12.1-4.8 35.2-24.8 55.1C594.9 402.6 562.2 416 512 416s-82.9-13.4-103.2-33.5c-20-20-24.2-43-24.8-55.1c-.6-9.8 2.5-18 5.5-23.8L467.3 155z"/></svg>
+                    <b>House Rule</b>
+                    <p> These are our rules and please always keep them in mind. </p>
+                </div>
+
+                <div class="check-in-rule">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M271.9 4.2c-9.8-5.6-21.9-5.6-31.8 0l-224 128C6.2 137.9 0 148.5 0 160V480c0 17.7 14.3 32 32 32s32-14.3 32-32V178.6L256 68.9 448 178.6V480c0 17.7 14.3 32 32 32s32-14.3 32-32V160c0-11.5-6.2-22.1-16.1-27.8l-224-128zM256 208c22.1 0 40-17.9 40-40s-17.9-40-40-40s-40 17.9-40 40s17.9 40 40 40zm-8 280V400h16v88c0 13.3 10.7 24 24 24s24-10.7 24-24V313.5l26.9 49.9c6.3 11.7 20.8 16 32.5 9.8s16-20.8 9.8-32.5l-37.9-70.3c-15.3-28.5-45.1-46.3-77.5-46.3H246.2c-32.4 0-62.1 17.8-77.5 46.3l-37.9 70.3c-6.3 11.7-1.9 26.2 9.8 32.5s26.2 1.9 32.5-9.8L200 313.5V488c0 13.3 10.7 24 24 24s24-10.7 24-24z"/></svg>
+                    <div class="rule-title">Check-in</div>
+                    <div class="rule">Between 14:00pm to 22:00pm.</div>
+                </div>
+           
+                <div class="check-out-rule">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M320 32c0-9.9-4.5-19.2-12.3-25.2S289.8-1.4 280.2 1l-179.9 45C79 51.3 64 70.5 64 92.5V448H32c-17.7 0-32 14.3-32 32s14.3 32 32 32H96 288h32V480 32zM256 256c0 17.7-10.7 32-24 32s-24-14.3-24-32s10.7-32 24-32s24 14.3 24 32zm96-128h96V480v32h32 64c17.7 0 32-14.3 32-32s-14.3-32-32-32H512V128c0-35.3-28.7-64-64-64H352v64z"/></svg>
+                    <div class="rule-title">Check-out</div>
+                    <div class="rule">Between 8:00am to 12:00am.</div>
+                </div>
+
+                <div class="payment-cancel-rule">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+                    <div class="rule-title">Cancellation/Payment</div>
+                    <div class="rule">Cancellation will not be accepted after the room(s) has been booked. Payment must be made before check-out date.</div>
+                </div>
+
+                <div class="children-beds-rule">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M160 128c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64zM88 480V400H70.2c-10.9 0-18.6-10.7-15.2-21.1l31.1-93.4L57.5 323.3c-10.7 14.1-30.8 16.8-44.8 6.2s-16.8-30.7-6.2-44.8L65.4 207c22.4-29.6 57.5-47 94.6-47s72.2 17.4 94.6 47l58.9 77.7c10.7 14.1 7.9 34.2-6.2 44.8s-34.2 7.9-44.8-6.2l-28.6-37.8L265 378.9c3.5 10.4-4.3 21.1-15.2 21.1H232v80c0 17.7-14.3 32-32 32s-32-14.3-32-32V400H152v80c0 17.7-14.3 32-32 32s-32-14.3-32-32zM480 128c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64zm-8 256v96c0 17.7-14.3 32-32 32s-32-14.3-32-32V300.5L395.1 321c-9.4 15-29.2 19.4-44.1 10s-19.4-29.2-10-44.1l51.7-82.1c17.6-27.9 48.3-44.9 81.2-44.9h12.3c33 0 63.7 16.9 81.2 44.9L619.1 287c9.4 15 4.9 34.7-10 44.1s-34.7 4.9-44.1-10L552 300.5V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V384H472z"/></svg>
+                    <div class="rule-title">Children and beds</div>
+                    <div class="child-bed-container">
+                        <div class="sub1">
+                            <h4>Child Policies</h4>
+                            <div class="rule" style="padding-bottom: 10px;">Children of any ages are welcome.</div>
+                            <div class="rule">Children aged 18 years and above are considered adults at this property.</div>
+                        </div>
+                        <div class="sub2" style="padding-left: 30px;">
+                            <h4>Cot and extra beds policies</h4>
+                            <div class="rule">No cots and extra beds are available.</div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="age-rule">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M208 48c0 26.5-21.5 48-48 48s-48-21.5-48-48s21.5-48 48-48s48 21.5 48 48zM152 352V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V256.9L59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6h29.7c33.7 0 64.9 17.7 82.3 46.6l58.3 97c9.1 15.1 4.2 34.8-10.9 43.9s-34.8 4.2-43.9-10.9L232 256.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H152z"/></svg>
+                    <div class="rule-title">No age restriction</div>
+                    <div class="rule">There is no age requirement for check-in.</div>
+                </div>
+
+                <div class="payment-method">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M64 64C28.7 64 0 92.7 0 128V384c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H64zm64 320H64V320c35.3 0 64 28.7 64 64zM64 192V128h64c0 35.3-28.7 64-64 64zM448 384c0-35.3 28.7-64 64-64v64H448zm64-192c-35.3 0-64-28.7-64-64h64v64zM288 352c-53 0-96-43-96-96s43-96 96-96s96 43 96 96s-43 96-96 96z"/></svg>
+                    <div class="rule-title">Payment method</div>
+                    <div class="rule">We only accept cash payments.</div>
+                </div>
+
+                <div class="smoking-rule">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M99.5 144.8L178.7 224l96 96 92.5 92.5C335.9 434.9 297.5 448 256 448C150 448 64 362 64 256c0-41.5 13.1-79.9 35.5-111.2zM333.3 288l-32-32H384v32H333.3zm32 32H400c8.8 0 16-7.2 16-16V240c0-8.8-7.2-16-16-16H269.3L144.8 99.5C176.1 77.1 214.5 64 256 64c106 0 192 86 192 192c0 41.5-13.1 79.9-35.5 111.2L365.3 320zM256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM272 96c-8.8 0-16 7.2-16 16c0 26.5 21.5 48 48 48h32c8.8 0 16 7.2 16 16s7.2 16 16 16s16-7.2 16-16c0-26.5-21.5-48-48-48H304c-8.8 0-16-7.2-16-16s-7.2-16-16-16zM229.5 320l-96-96H112c-8.8 0-16 7.2-16 16v64c0 8.8 7.2 16 16 16H229.5z"/></svg>
+                    <div class="rule-title">Smoking</div>
+                    <div class="rule">Smoking is not allowed</div>
+                </div>
+
+                <div class="party-rule">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M320 128V49.1L186.6 .3c-11.4-4.2-24 .9-29.5 11.7L71.8 181.1c-30.8 61-8 133.8 48.1 167.4l-28 77.4L32.1 403.9C19.7 399.4 6 405.8 1.4 418.3s1.9 26.3 14.3 30.8l164.6 60.3c12.4 4.5 26.1-1.9 30.6-14.4s-1.9-26.3-14.3-30.8l-59.9-21.9 28-77.3c68.1 11.6 135.7-32.8 150.1-103.6l5.1-24.8 5.1 24.8c14.5 70.8 82 115.2 150.1 103.6l28 77.3-59.9 21.9c-12.4 4.5-18.8 18.3-14.3 30.8s18.2 18.9 30.6 14.4l164.6-60.3c12.4-4.5 18.8-18.3 14.3-30.8s-18.2-18.9-30.6-14.4l-59.9 21.9-28-77.4c56.1-33.6 78.8-106.4 48.1-167.4L482.9 12C477.4 1.1 464.7-3.9 453.4 .3L320 49.1V128h0zm-35.7 44.4L153.9 124.6l36.3-71.9L300.6 93.1l-16.2 79.3zm71.3 0L339.4 93.1 449.8 52.7l36.3 71.9L355.7 172.4z"/></svg>
+                    <div class="rule-title">Parties</div>
+                    <div class="rule">Parties/ events are not allowed.</div>
+                </div>
+
+                <div class="pet-rule">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M226.5 92.9c14.3 42.9-.3 86.2-32.6 96.8s-70.1-15.6-84.4-58.5s.3-86.2 32.6-96.8s70.1 15.6 84.4 58.5zM100.4 198.6c18.9 32.4 14.3 70.1-10.2 84.1s-59.7-.9-78.5-33.3S-2.7 179.3 21.8 165.3s59.7 .9 78.5 33.3zM69.2 401.2C121.6 259.9 214.7 224 256 224s134.4 35.9 186.8 177.2c3.6 9.7 5.2 20.1 5.2 30.5v1.6c0 25.8-20.9 46.7-46.7 46.7c-11.5 0-22.9-1.4-34-4.2l-88-22c-15.3-3.8-31.3-3.8-46.6 0l-88 22c-11.1 2.8-22.5 4.2-34 4.2C84.9 480 64 459.1 64 433.3v-1.6c0-10.4 1.6-20.8 5.2-30.5zM421.8 282.7c-24.5-14-29.1-51.7-10.2-84.1s54-47.3 78.5-33.3s29.1 51.7 10.2 84.1s-54 47.3-78.5 33.3zM310.1 189.7c-32.3-10.6-46.9-53.9-32.6-96.8s52.1-69.1 84.4-58.5s46.9 53.9 32.6 96.8s-52.1 69.1-84.4 58.5z"/></svg>
+                    <div class="rule-title"> Pets</div>
+                    <div class="rule">Pets are not allowed.</div>
+                </div>
+            </main>
+            
+            <footer>
+                <b>Made by Le Hoang Cat</b>
+            </footer>
+        </div>
+        <script type="text/javascript">
+            document.getElementById("btn").onclick = function () {
+                location.href = "main.html";
+            };
+        </script>
+    </body>
+</html>

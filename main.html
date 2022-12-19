@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="Ie=edge">
+        <title>Main</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, intial-scale = 1">
+        <style>
+            @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+            /*Start of*/
+            .nav-header{
+                background-color: blue;
+                height: 70px;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            .nav-header .logo{
+                width: 50px;
+                height: 50px;
+            }
+
+            .nav-header .header-text{
+                font-size: 24px;
+                color: white;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .main-container{
+                display: flex;
+                flex-direction: column;
+            }
+
+            .sub-container{
+                background-color: aqua;
+                height: 500px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            /*Start of image css*/
+            .display{
+                height: 60%;
+                width: 60%;
+            }
+
+            .sub-container-display-img{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 20px;
+            }
+
+            .img-btn{
+                font-size: 60px;
+            }
+            /*End of image css*/
+
+
+            @media screen and (max-width: 800px){
+                .main-container, .sub-container, .nav-header{
+                    width: 100%;
+                    height: 100%;
+                }
+                
+            }
+
+            @media screen and (max-width: 600px){
+                .main-container, .sub-container, .nav-header{
+                    width: 75%;
+                    height: 75%;
+                }   
+            }
+
+            @media screen and (max-width: 600px){
+                .main-container, .sub-container, .nav-header{
+                    width: 50%;
+                    height: 50%;
+                }   
+            }
+
+            .side-bar {
+            background: #111;
+            border-right: 1px solid #000;
+            box-shadow: 1px 0 0 #222;
+            height: 100%;
+            width: 220px;
+            }
+
+            ul {
+            background: #111;
+            border-bottom: 1px solid #222;
+            height: 300px;
+            } 
+
+            li {
+            display: block;
+            }
+
+            .option-sidebar {
+            background: #111;
+            border-bottom: 1px solid #000;
+            border-top: 1px solid #222;
+            box-shadow:
+                inset -5px 0 0 hsla(0, 0%, 0%, .2),
+                inset 0 20px 0 #161616
+            ;
+            color: #bbb;
+            display: block;
+            font-size: 14px;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 45px;
+            text-align: right;
+            text-decoration: none;
+            text-shadow: 0 -1px 1px hsla(0, 0%, 0%, .5);
+            transition: all 300ms;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+
+            li.option-sidebar a {
+            background: #222;
+            border-top-color: #3a3a3a;
+            box-shadow: 
+                inset -5px 0 0 #3a3a3a,
+                inset 0 20px 0 #282828
+            ;
+            color: #ddd;
+            outline: 0  ;
+            padding: 0 30px;
+            transition: all 300ms;
+            }
+
+            .option-sidebar:hover,
+            .option-sidebar:focus{
+            background: #222;
+            border-top-color: #3a3a3a;
+            box-shadow: 
+                inset -5px 0 0 #3a3a3a,
+                inset 0 20px 0 #282828
+            ;
+            color: #ddd;
+            outline: 0  ;
+            padding: 0 30px;
+            transition: all 300ms;
+            }
+
+            li.option-sidebar a {
+            box-shadow:
+                inset -5px 0 0 #e00,
+                inset 0 20px 0 #282828
+            ;
+            padding: 0 45px;
+            }
+
+            a:active {
+            background: #333;
+            border-top-color: #666;
+            box-shadow: 
+                inset -5px 0 0 #666,
+                inset 0 20px 0 #444
+            ;
+            color: #fff;
+            transition: all 50ms;
+            }
+
+
+            .log-in-btn {
+            align-self: center;
+            background-color: #fff;
+            background-image: none;
+            background-position: 0 90%;
+            background-repeat: repeat no-repeat;
+            background-size: 4px 3px;
+            border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+            border-style: solid;
+            border-width: 2px;
+            box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+            box-sizing: border-box;
+            color: #41403e;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Neucha, sans-serif;
+            font-size: 1rem;
+            line-height: 23px;
+            outline: none;
+            padding: .75rem;
+            text-decoration: none;
+            transition: all 235ms ease-in-out;
+            border-bottom-left-radius: 15px 255px;
+            border-bottom-right-radius: 225px 15px;
+            border-top-left-radius: 255px 15px;
+            border-top-right-radius: 15px 225px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            }
+
+            .log-in-btn:hover {
+            box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+            transform: translate3d(0, 2px, 0);
+            }
+
+            .log-in-btn:focus {
+            box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+            }
+            footer{
+                background-color: blue;
+                height: 70px;
+                color: white;
+                font-size: 10px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            b{  
+                padding-left: 30px;
+            }
+
+            .image-container{
+                height: 400px;
+                position: relative;
+                width: 800px;
+                display: block;
+                margin: 50px auto;
+                border: 2px solid black;
+            }
+
+            .carousel-item{
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 25px 50px;
+                opacity: 0;
+                transition: all 0.5s ease-in-out;
+            }
+
+            .arrow{
+                border: solid black;
+                border-width: 0 3px 3px 0;
+                display: inline-block;
+                padding: 12px;
+            }
+
+            .arrow-prev{
+                left: 30px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%) rotate(135deg);
+            }
+
+            .arrow-next{
+                right: 30px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%)  rotate(-45deg);
+            }
+
+            [id^= "img"]{
+                display: none;
+            }
+
+            .img1{
+                z-index: 2;
+                opacity: 1;
+                background: url('Hotel img/img1.jpg');
+                background-size: cover;
+            }
+
+            .img2{
+                background: url('Hotel img/img2.jpg');
+                background-size: cover;
+            }
+
+            .img3{
+                background: url('Hotel img/img3.jpg');
+                background-size: cover;
+            }
+
+            .img4{
+                background: url('Hotel img/img4.jpg');
+                background-size: cover;
+            }
+
+            .img5{
+                background: url('Hotel img/img5.jpg');
+                background-size: cover;
+            }
+
+            .img6{
+                background: url('Hotel img/img6.jpg');
+                background-size: cover;
+            }
+
+            .img7{
+                background: url('Hotel img/img7.jpg');
+                background-size: cover;
+            }
+
+            .img8{
+                background: url('Hotel img/img8.jpg');
+                background-size: cover;
+            }
+
+            .img9{
+                background: url('Hotel img/img9.jpg');
+                background-size: cover;
+            }
+
+            .img10{
+                background: url('Hotel img/img10.jpg');
+                background-size: cover;
+            }
+
+            .img11{
+                background: url('Hotel img/img11.jpg');
+                background-size: cover;
+            }
+
+            .img12{
+                background: url('Hotel img/img12.jpg');
+                background-size: cover;
+            }
+
+            .img13{
+                background: url('Hotel img/img13.jpg');
+                background-size: cover;
+            }
+
+            .img14{
+                background: url('Hotel img/img14.jpg');
+                background-size: cover;
+            }
+
+            .img15{
+                background: url('Hotel img/img15.jpg');
+                background-size: cover;
+            }
+
+            *:target ~ .img1{
+                opacity: 0;
+            }
+
+            #img1:target ~ .img1{
+                opacity: 1;
+            }
+
+            #img2:target ~ .img2, #img3:target ~ .img3, #img4:target ~ .img4, #img5:target ~ .img5, #img6:target ~ .img6,
+            #img7:target ~ .img7, #img8:target ~ .img8, #img9:target ~ .img9, #img10:target ~ .img10,
+            #img11:target ~ .img11, #img12:target ~ .img12, #img13:target ~ .img13, #img14:target ~ .img14,
+            #img15:target ~ .img15{
+                z-index: 3;
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main-container">
+            <header> 
+                <nav class="nav-header">
+                    <img class="logo" src="Logo/logo.jpg" alt="logo">
+                    <div class="header-text"> Princess of Arena Cam Ranh Hotel</div>
+                    <button class="log-in-btn">Log-in</button>
+                </nav>
+            </header>
+        
+            <main>
+                <div class="sub-container">
+                    <nav class="side-bar">
+                        <ul>
+                            <li id="listing"><a class= "option-sidebar" onclick="window.location= 'hotelListing.html';">Listing</a></li>
+                            <li id="rules"><a class= "option-sidebar" onclick="window.location= 'houseRule.html';">Rules</a></li>
+                            <li id="facilities"><a class= "option-sidebar" onclick="window.location= 'hotelFacilities.html';">Facilities</a></li>
+                            <li style="padding-bottom: 400px;" id="info"><a class= "option-sidebar" onclick="window.location= 'hotelInfo.html';">Info</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="image-container">
+                        <span id="img1"></span>
+                        <span id="img2"></span>
+                        <span id="img3"></span>
+                        <span id="img4"></span>
+                        <span id="img5"></span>
+                        <span id="img6"></span>
+                        <span id="img7"></span>
+                        <span id="img8"></span>
+                        <span id="img9"></span>
+                        <span id="img10"></span>
+                        <span id="img11"></span>
+                        <span id="img12"></span>
+                        <span id="img13"></span>
+                        <span id="img14"></span>
+                        <span id="img15"></span>
+                        <div class="carousel-item img1">
+                            <a href="#img3" class="arrow-prev arrow"></a>
+                            <a href="#img2" class="arrow-next arrow"></a>
+                        </div>
+            
+                        <div class="carousel-item img2">
+                            <a href="#img1" class="arrow-prev arrow"></a>
+                            <a href="#img3" class="arrow-next arrow"></a>
+                        </div>
+            
+                        <div class="carousel-item img3">
+                            <a href="#img2" class="arrow-prev arrow"></a>
+                            <a href="#img4" class="arrow-next arrow"></a>
+                        </div>
+            
+                        <div class="carousel-item img4">
+                            <a href="#img3" class="arrow-prev arrow"></a>
+                            <a href="#img5" class="arrow-next arrow"></a>
+                        </div>
+
+                        <div class="carousel-item img5">
+                            <a href="#img4" class="arrow-prev arrow"></a>
+                            <a href="#img6" class="arrow-next arrow"></a>
+                        </div>
+
+                        <div class="carousel-item img6">
+                            <a href="#img5" class="arrow-prev arrow"></a>
+                            <a href="#img7" class="arrow-next arrow"></a>
+                        </div>
+
+                        <div class="carousel-item img7">
+                            <a href="#img6" class="arrow-prev arrow"></a>
+                            <a href="#img8" class="arrow-next arrow"></a>
+                        </div>
+
+                        <div class="carousel-item img8">
+                            <a href="#img7" class="arrow-prev arrow"></a>
+                            <a href="#img9" class="arrow-next arrow"></a>
+                        </div>
+
+                        <div class="carousel-item img9">
+                            <a href="#img8" class="arrow-prev arrow"></a>
+                            <a href="#img10" class="arrow-next arrow"></a>
+                        </div>
+
+                        <div class="carousel-item img10">
+                            <a href="#img9" class="arrow-prev arrow"></a>
+                            <a href="#img11" class="arrow-next arrow"></a>
+                        </div>
+
+                        <div class="carousel-item img11">
+                            <a href="#img10" class="arrow-prev arrow"></a>
+                            <a href="#img12" class="arrow-next arrow"></a>
+                        </div>
+
+                        <div class="carousel-item img12">
+                            <a href="#img11" class="arrow-prev arrow"></a>
+                            <a href="#img13" class="arrow-next arrow"></a>
+                        </div>
+
+                        <div class="carousel-item img13">
+                            <a href="#img12" class="arrow-prev arrow"></a>
+                            <a href="#img14" class="arrow-next arrow"></a>
+                        </div>
+
+                        <div class="carousel-item img14">
+                            <a href="#img13" class="arrow-prev arrow"></a>
+                            <a href="#img15" class="arrow-next arrow"></a>
+                        </div>
+
+                        <div class="carousel-item img15">
+                            <a href="#img14" class="arrow-prev arrow"></a>
+                            <a href="#img1" class="arrow-next arrow"></a>
+                        </div>
+                    </div>      
+                </div>
+            </main>
+        
+            <footer>
+                <b>Made by Le Hoang Cat</b>
+            </footer>
+        </div>       
+    </body>   
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="Ie=edge">
+        <title>Main</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, intial-scale = 1">
+        <style>
+            .nav-header{
+            background-color: blue;
+            height: 70px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .nav-header .logo{
+            width: 50px;
+            height: 50px;
+        }
+
+        .nav-header .header-text{
+            font-size: 24px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .sub-container{
+            background-color: aqua;
+            height: 500px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .info{
+            height: 400px;
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: flex-start;
+        }
+
+        .title-text{
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .title-text .title{
+            padding-bottom: 10px;
+            color: red;
+            font-weight: bolder;
+            font-size: 18px;
+        }
+
+        .map{
+            padding-top: 80px;
+            height: 400px;
+            width: 400px;
+        }
+
+        .return-btn {
+            align-self: center;
+            background-color: #fff;
+            background-image: none;
+            background-position: 0 90%;
+            background-repeat: repeat no-repeat;
+            background-size: 4px 3px;
+            border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+            border-style: solid;
+            border-width: 2px;
+            box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+            box-sizing: border-box;
+            color: #41403e;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Neucha, sans-serif;
+            font-size: 1rem;
+            line-height: 23px;
+            outline: none;
+            padding: .75rem;
+            text-decoration: none;
+            transition: all 235ms ease-in-out;
+            border-bottom-left-radius: 15px 255px;
+            border-bottom-right-radius: 225px 15px;
+            border-top-left-radius: 255px 15px;
+            border-top-right-radius: 15px 225px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            }
+
+            .return-btn:hover {
+            box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+            transform: translate3d(0, 2px, 0);
+            }
+
+            .return-btn:focus {
+            box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+            }
+
+            footer{
+                background-color: blue;
+                height: 70px;
+                color: white;
+                font-size: 10px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            b{  
+                padding-left: 30px;
+            }
+
+            .title{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            
+            p{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            @media screen and (max-width: 800px){
+                .main-container, .sub-container, .nav-header{
+                    width: 100%;
+                    height: 100%;
+                }
+                
+            }
+
+            @media screen and (max-width: 600px){
+                .main-container, .sub-container, .nav-header{
+                    width: 75%;
+                    height: 75%;
+                }   
+            }
+
+            @media screen and (max-width: 600px){
+                .main-container, .sub-container, .nav-header{
+                    width: 50%;
+                    height: 50%;
+                }   
+            }
+
+            .owner-container{
+                display: flex;
+            }
+            img{
+                width: 20%;
+                height: 20%;
+                max-width: 300px;
+                padding-left: 25px;
+                border-radius: 20%;
+            }
+
+            #owner-face {
+                border-radius: 5px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            #owner-face:hover {opacity: 0.7;}
+
+                /* The Modal (background) */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                padding-top: 100px; /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+            }
+
+            /* Modal Content (image) */
+            .modal-content {
+                margin: auto;
+                display: block;
+                width: 80%;
+                height: 60%;
+                max-width: 700px;
+            }
+
+            /* Caption of Modal Image */
+            #caption {
+                margin: auto;
+                display: block;
+                width: 80%;
+                max-width: 700px;
+                text-align: center;
+                color: #ccc;
+                padding: 10px 0;
+                height: 150px;
+            }
+
+            /* Add Animation */
+            .modal-content, #caption {  
+                -webkit-animation-name: zoom;
+                -webkit-animation-duration: 0.6s;
+                animation-name: zoom;
+                animation-duration: 0.6s;
+            }
+
+            @-webkit-keyframes zoom {
+                from {-webkit-transform:scale(0)} 
+                to {-webkit-transform:scale(1)}
+            }
+
+            @keyframes zoom {
+                from {transform:scale(0)} 
+                to {transform:scale(1)}
+            }
+
+            /* The Close Button */
+            .close {
+                position: absolute;
+                top: 15px;
+                right: 35px;
+                color: #f1f1f1;
+                font-size: 40px;
+                font-weight: bold;
+                transition: 0.3s;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: #bbb;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            /* 100% Image Width on Smaller Screens */
+            @media only screen and (max-width: 700px){
+                .modal-content {
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="main-container">
+            <header> 
+                <nav class="nav-header">
+                    <img class="logo" src="Logo/logo.jpg" alt="logo">
+                    <div class="header-text"> Princess of Arena Cam Ranh Hotel</div>
+                    <button class="return-btn" id="btn">Return</button>
+                </nav>
+            </header>
+    
+            <main class="sub-container">
+                <div class="info">
+                    <div class="title-text">
+                        <div class="title" style="padding-bottom: 10px;">Hotel Name</div>
+                        <p>Princess of Area Cam Ranh</p>
+                    </div>
+
+                    <div class="title-text">
+                        <div class="title">Hotel Address</div>
+                        <p>26H7+WRQ, Nguyễn Tất Thành, Cam Hải Đông, Tp. Cam Ranh, Khánh Hòa 57000, Việt Nam</p>
+                    </div>
+
+                    <div class="title-text">
+                        <div class="title">Owner Name</div>
+                        <div class="owner-container">
+                            <p>Mr. Lê Văn Tèo</p>
+                            <img src="Owner Face/Owner.png" alt="Owner's face" id="owner-face">
+                        </div>
+                    </div>
+
+                    <div class="title-text">
+                        <div class="title">Phone number</div>
+                        <p>0917235829</p>
+                    </div>
+                </div>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.198675547423!2d109.21242235049975!3d12.02983919143675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31708b02a239a783%3A0x1307a2b6af9dcdf7!2sThe%20Princess%20of%20Arena%20Cam%20Ranh%20Home!5e0!3m2!1svi!2s!4v1669917869925!5m2!1svi!2s" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="img01">
+                    <div id="caption"></div>
+                </div>
+            </main>
+    
+            <footer>
+                <b>Made by Le Hoang Cat</b>
+            </footer>
+        </div>
+        <script type="text/javascript">
+            document.getElementById("btn").onclick = function () {
+                location.href = "main.html";
+            };
+
+            // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            var img = document.getElementById("owner-face");
+            var modalImg = document.getElementById("img01");
+            var captionText = document.getElementById("caption");
+            img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+            }
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() { 
+            modal.style.display = "none";
+            }
+        </script>
+    </body>
+</html> 
